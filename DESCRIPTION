@@ -1,0 +1,21 @@
+Package: Broutard
+Title: A package to help breeder 
+Version: 0.1.2
+Authors@R: person("Oscar", "Mallet", email = "oscar-mallet@outlook.com", role = c("aut", "cre"))
+Description: A shiny app to help breeder choose their food.
+License: GPL-3
+Depends:
+    R (>= 3.4.3)
+Imports:
+    shiny,
+    shinydashboard,
+    knitr,
+    purrr,
+    rhandsontable,
+    ggplot2,
+    tidyr,
+    dplyr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
