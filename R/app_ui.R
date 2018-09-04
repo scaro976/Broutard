@@ -16,21 +16,23 @@ app_ui <- function() {
         # First tab content
         tabItem(tabName = "param",
                 fluidRow(
-                      box(title = "Nombre de parametres", width=6,
+                      box(title = "1) Nombre de parametres", width=4,
                         numericInput("n_alim","Nombre d'aliments",value=3),
+                        uiOutput("nom_alim"),
                         numericInput("n_phase","Nombre de phases de croissance", value=4)
                       ),
-                      box(width=6, title = "GMQ (g/j) par phase et par aliment",
-                        rHandsontableOutput("tableGmq")
-                      )),
-                fluidRow(
-                      box(width=4, title = "Poids qui definissent les phases (kg)",
-                        rHandsontableOutput("tablePhases")
+                      box(width=3, title = "2) Poids qui definissent les phases (kg)",
+                          rHandsontableOutput("tablePhases")
                       ),
-                      box(width=4, title = "Prix de la viande par phase (kg)",
+                      box(width=5, title = "3) GMQ (g/j) par phase et par aliment",
+
+                          rHandsontableOutput("tableGmq"))
+                ),
+                fluidRow(
+                      box(width=4, title = "4) Prix du vif par phase (kg)",
                         rHandsontableOutput("tableViande")
                       ),
-                      box(width=4, title = "Prix de l'aliment en euro/t",
+                      box(width=4, title = "5) Prix de l'aliment en euro/t",
                         rHandsontableOutput("tableAlim")
                       )
                 )

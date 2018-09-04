@@ -5,7 +5,7 @@
 \title{table_alim
 Creat the handsontable widget that contain the food price infos}
 \usage{
-rhandsontable_alim(n_alim)
+rhandsontable_alim(n_alim, nom_alim)
 }
 \description{
 table_alim

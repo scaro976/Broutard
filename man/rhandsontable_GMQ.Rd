@@ -5,7 +5,7 @@
 \title{table GMQ
 Creat the handsontable widget that contain the GMQ infos}
 \usage{
-rhandsontable_GMQ(n_alim, n_phase)
+rhandsontable_GMQ(n_alim, n_phase, nom_alim)
 }
 \arguments{
 \item{n_alim}{numeric, number of aliment}

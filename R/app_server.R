@@ -1,13 +1,24 @@
 #' @import shiny
 #' @import rhandsontable
+#' @import purrr
 app_server <- function(input, output,session) {
 
   nalim <- reactive({input$n_alim})
   nphase <- reactive({input$n_phase})
 
-  output$tableAlim <- rhandsontable_alim(nalim)
+  output$nom_alim <- renderUI({
+    tagList(
+      map(1:nalim(),~textInput(paste0("alim_",.x),paste0("nom de l'alim ",.x),value=.x))
+    )
+  })
 
-  output$tableGmq <- rhandsontable_GMQ(nalim,nphase)
+  nom_alim <- reactive({
+    map(1:nalim(),~ input[[paste0("alim_",.x)]])
+  })
+
+  output$tableAlim <- rhandsontable_alim(nalim,nom_alim)
+
+  output$tableGmq <- rhandsontable_GMQ(nalim,nphase,nom_alim)
 
   output$tablePhases <- rhandsontable_phase(nphase)
 
